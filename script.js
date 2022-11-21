@@ -1,11 +1,25 @@
+const hover = document.getElementById("hover");
 
-document.getElementById("hover").addEventListener("mouseover", mouseOver);
-document.getElementById("hover").addEventListener("mouseout", mouseOut);
+// This handler will be executed only once when the cursor
+// moves over item
+hover.addEventListener("mouseenter", (event) => {
+  // highlight the mouseenter target
+  event.target.style.color = "purple";
 
-function mouseOver() {
-    document.getElementById("hover").style.color = "orange";
-};
+  // reset the color after a short delay
+  setTimeout(() => {
+    event.target.style.color = "";
+  }, 500);
+}, false);
 
-function mouseOut() {
-    document.getElementById("hover").style.color = "black";
-  };
+// This handler will be executed every time the cursor
+// is moved over item
+hover.addEventListener("mouseover", (event) => {
+  // highlight the mouseover target
+  event.target.style.color = "orange";
+
+  // reset the color after a short delay
+  setTimeout(() => {
+    event.target.style.color = "";
+  }, 500);
+}, false);
